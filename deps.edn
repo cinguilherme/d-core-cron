@@ -1,0 +1,28 @@
+{:deps {;; d-core-std provides shared facilities: logger, etc.
+        org.clojars.cinguilherme/d-core-std {:local/root "../d-core-std"}
+
+        ;; Clojure Core dependencies
+        org.clojure/clojure {:mvn/version "1.12.3"}
+        org.clojure/core.async {:mvn/version "1.8.741"}
+
+        ;; Integrant lifecycle & Duct logger
+        org.duct-framework/main {:mvn/version "0.4.4"}
+        org.duct-framework/logger {:mvn/version "0.3.0"}
+        org.duct-framework/module.logging {:mvn/version "0.6.6"}
+
+        ;; Quartz scheduler
+        org.quartz-scheduler/quartz {:mvn/version "2.3.2"}}
+
+ :aliases
+ {:test
+  {:extra-paths ["test"]
+   :extra-deps {io.github.cognitect-labs/test-runner {:git/tag "v0.5.1"
+                                                      :git/sha "dfb30dd"}}
+   :main-opts ["-m" "cognitect.test-runner"]}
+  :lint
+  {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2024.03.13"}}
+   :main-opts ["-m" "clj-kondo.main"]}
+  :build
+  {:deps {io.github.clojure/tools.build {:mvn/version "0.10.6"}
+          slipset/deps-deploy {:mvn/version "0.2.2"}}
+   :ns-default build}}}
