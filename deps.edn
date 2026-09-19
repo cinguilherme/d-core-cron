@@ -1,5 +1,8 @@
 {:deps {;; d-core-std provides shared facilities: logger, etc.
-        org.clojars.cinguilherme/d-core-std {:local/root "../d-core-std"}
+        ;org.clojars.cinguilherme/d-core-std {:local/root "../d-core-std"}
+
+        ;;d-core-std for publishing to clojars
+        org.clojars.cinguilherme/d-core-std {:mvn/version "0.2.0"}
 
         ;; Clojure Core dependencies
         org.clojure/clojure {:mvn/version "1.12.3"}
