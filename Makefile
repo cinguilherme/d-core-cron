@@ -22,7 +22,7 @@ install:
 	clojure -T:build install
 
 publish:
-	clojure -T:build publish :bump $(or $(BUMP),patch)
+	clojure -T:build publish :bump :$(or $(BUMP),patch)
 
 bump-version-patch:
 	@$(MAKE) publish BUMP=patch
